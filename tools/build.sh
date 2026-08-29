@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
-# Build PDFs for every language of every book, into build/.
+# Build the translated PDFs into build/.
 #
-#   tools/build.sh                     everything
-#   tools/build.sh childrens-guide-to-kubernetes      one book
-#   tools/build.sh childrens-guide-to-kubernetes uk   one edition
+#   tools/build.sh                                    every translation
+#   tools/build.sh childrens-guide-to-kubernetes      one book's translations
+#   tools/build.sh childrens-guide-to-kubernetes en   one named edition
+#
+# Naming a language builds it whatever it is. Left to itself the script skips
+# each book's `source` language, because that one is the translation input, not
+# an edition to publish: an English PDF from here would only be a worse copy of
+# the book CNCF already ships. Build it by name when you want to check the
+# template against the original.
 #
 # Needs python3 (standard library only) and typst on PATH.
 set -euo pipefail
@@ -27,8 +33,9 @@ for slug in "${books[@]}"; do
     langs=("${2:-}")
     if [ -z "${langs[0]}" ]; then
         mapfile -t langs < <(python3 -c "
-import json,sys
-print('\n'.join(json.load(open('books/$slug/book.json'))['languages']))")
+import json
+b = json.load(open('books/$slug/book.json'))
+print('\n'.join(l for l in b['languages'] if l != b.get('source')))")
     fi
 
     for lang in "${langs[@]}"; do

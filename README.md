@@ -36,7 +36,8 @@ covers, a print-ready file — is separate work happening alongside it.
 
 ```
 books/childrens-guide-to-kubernetes/
-    book.json    page manifest: which pages exist, what kind, which artwork
+    book.json    page manifest: which pages exist, what kind, which artwork,
+                 and which languages are editions rather than the source
     en.md        source of truth — transcribed from the published CNCF PDF
     uk.md        Ukrainian
     pl.md        Polish
@@ -49,7 +50,7 @@ tools/
     extract_art.py  published PDF -> art/            (run rarely, output committed)
     build_book.py   <lang>.md + book.json -> JSON    (stdlib only)
     book.typ        the Typst template
-    build.sh        build every edition into build/
+    build.sh        build every translation into build/
     pdftext.py      stdlib PDF text extractor, used to check en.md against the original
 ```
 
@@ -82,9 +83,13 @@ Needs `python3` (standard library only) and [`typst`](https://github.com/typst/t
 on `PATH`. Nothing else — the fonts and artwork are in the repo.
 
 ```sh
-tools/build.sh                                    # every language of every book
+tools/build.sh                                    # every translation
 tools/build.sh childrens-guide-to-kubernetes uk   # just one
 ```
+
+`en` is the translation source, not an edition, so it is left out unless you name it —
+`tools/build.sh childrens-guide-to-kubernetes en` builds it, which is the quickest way to
+check the template against the book CNCF publishes.
 
 Re-extracting the artwork is a separate, rare step, and the only one that needs third-party
 packages:
