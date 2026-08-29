@@ -25,6 +25,8 @@
 #let BULLET-X = 64pt
 #let BULLET-TOP = 158pt
 #let BULLET-W = 340pt
+#let CREDITS-TOP = 150pt // the credits block sits centred in this band
+#let CREDITS-BOT = 500pt
 #let FADE-TOP = 421pt // where the artwork starts fading into the page
 #let FADE-BOT = 520pt
 
@@ -144,25 +146,48 @@
 }
 
 #let credits-page(page) = {
-  place(top + left, dx: 96pt, dy: 150pt, block(width: PW - 192pt, {
+  // The CNCF logo goes under the opening line, where the original has it.
+  // Width only, never a height as well: the brand guidelines are explicit that
+  // the mark must not be scaled away from its own proportions.
+  let logo-after = page.blocks.position(b => b.type == "para")
+  let body = {
     set align(center)
     set par(leading: 0.6em, justify: false)
-    for b in page.blocks {
+    for (i, b) in page.blocks.enumerate() {
       if b.type == "para" {
-        text(size: 17pt)[#inline(b.runs)]
-        v(14pt)
+        text(size: 1em)[#inline(b.runs)]
+        v(0.8em)
+        if i == logo-after and page.at("art", default: none) != none {
+          image("/" + page.art, width: 300pt)
+          v(1.2em)
+        }
       } else if b.type == "lines" {
-        set text(size: 18pt)
+        set text(size: 1.06em)
         for item in b.items {
           inline(item.runs)
           linebreak()
         }
-        v(14pt)
+        v(0.8em)
       }
     }
-  }))
-  place(top + left, dx: 54pt, dy: 500pt, block(width: PW - 108pt, {
-    set align(center)
+  }
+
+  // Sizes inside `body` are relative, so this shrinks the whole block together
+  // when a language adds more credits than the original page was drawn for.
+  at(96pt, CREDITS-TOP, block(
+    width: PW - 192pt,
+    height: CREDITS-BOT - CREDITS-TOP,
+    align(center + horizon, fit(
+      body,
+      width: PW - 192pt,
+      height: CREDITS-BOT - CREDITS-TOP,
+      start: 17pt,
+      min: 11pt,
+    )),
+  ))
+
+  at(54pt, CREDITS-BOT, block(width: PW - 108pt, height: PH - CREDITS-BOT, {
+    set align(center + horizon)
     set par(leading: 0.5em, justify: false)
     set text(size: 11pt, fill: luma(60))
     for b in page.blocks {

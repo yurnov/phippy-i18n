@@ -40,9 +40,8 @@ This is an **unofficial community translation**, not published or endorsed by CN
   flattened into the page images rather than present as text.
 - Two typos in the original are corrected rather than translated: "Philsophia" (p9) and
   "Kurbernetes" (p17).
-- **The CNCF logo on the credits page is deliberately omitted.** CC-BY-4.0 requires preserving
-  attribution, which the credits text does; it does not license the trademark, and carrying
-  the logo on an unofficial translation would imply an endorsement that does not exist.
+- The CNCF logo on the credits page is the **current** horizontal colour lockup, where the
+  2018 original carries the lockup of its day. See the trademark note below.
 
 ## Attribution requirements carried into every derived file
 
@@ -58,6 +57,23 @@ web page, or printed copy produced from this repository must:
 
 The generated PDFs satisfy all five: the credits page carries 1, 2 and 3 plus the translation
 credit, and 4 and 5 appear both there and on the back cover.
+
+## CNCF trademarks
+
+The credits page reproduces the **CNCF logo**, as the original does. CNCF trademarks are owned
+by The Linux Foundation and are **not** covered by the CC-BY-4.0 licence on the book — their
+use is governed by the [CNCF brand guidelines](https://www.cncf.io/brand-guidelines/) and the
+Linux Foundation Trademark Usage Guidelines.
+
+The mark used here is `other/cncf/horizontal/color/cncf-color.svg` from
+[cncf/artwork](https://github.com/cncf/artwork), committed unchanged at
+`books/*/art/cncf-color.svg`. It is reproduced in its full-colour form, with no change to its
+colours or elements, scaled by width only so its proportions are preserved, and with clear
+space around it — the four things the guidelines ask for.
+
+It appears here to attribute the original work to CNCF, on the page whose purpose is
+attribution. It is not used as a mark of this translation, and the same page states plainly
+that this is an unofficial community translation which CNCF has not published or endorsed.
 
 ## Bundled typeface
 

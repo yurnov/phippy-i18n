@@ -19,7 +19,8 @@
     },
     {
       "n": 2,
-      "kind": "credits"
+      "kind": "credits",
+      "art": "cncf-color.svg"
     },
     {
       "n": 3,
