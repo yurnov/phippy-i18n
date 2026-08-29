@@ -59,6 +59,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$GITHUB_REF_NAME" build/*.pdf \
+          # A tag carrying a suffix — v0.1.0-draft, v0.2.0-rc1 — is a pre-release
+          # by semver convention. Marking it keeps an unreviewed edition off the
+          # repository's "Latest release" badge while still publishing the files.
+          flags=()
+          case "$GITHUB_REF_NAME" in *-*) flags+=(--prerelease) ;; esac
+          gh release create "$GITHUB_REF_NAME" build/*.pdf "${flags[@]}" \
             --title "$GITHUB_REF_NAME" \
-            --notes "Unofficial community translations of the CNCF Phippy books, built from this tag. Original work copyright The Linux Foundation on behalf of the CNCF, licensed CC-BY-4.0; these translations carry the same licence. See NOTICE.md."
+            --notes "Unofficial community translations of the CNCF Phippy books, built from this tag. The translations have not had a native-speaker review yet. Original work copyright The Linux Foundation on behalf of the CNCF, licensed CC-BY-4.0; these translations carry the same licence. See NOTICE.md."
