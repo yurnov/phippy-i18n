@@ -1,0 +1,129 @@
+{
+  "slug": "childrens-guide-to-kubernetes",
+  "title_en": "The Illustrated Children's Guide to Kubernetes",
+  "source_pdf": "https://www.cncf.io/wp-content/uploads/2020/08/The-Illustrated-Childrens-Guide-to-Kubernetes.pdf",
+  "page": {
+    "width": 792,
+    "height": 612
+  },
+  "languages": [
+    "en",
+    "uk",
+    "pl"
+  ],
+  "pages": [
+    {
+      "n": 1,
+      "kind": "cover",
+      "art": "cover.jpg"
+    },
+    {
+      "n": 2,
+      "kind": "credits"
+    },
+    {
+      "n": 3,
+      "kind": "dedication",
+      "art": "dedication.jpg"
+    },
+    {
+      "n": 4,
+      "kind": "story",
+      "art": "story-04.jpg"
+    },
+    {
+      "n": 5,
+      "kind": "note",
+      "art": "note-05.png"
+    },
+    {
+      "n": 6,
+      "kind": "story",
+      "art": "story-06.jpg"
+    },
+    {
+      "n": 7,
+      "kind": "note",
+      "art": "note-07.png"
+    },
+    {
+      "n": 8,
+      "kind": "story",
+      "art": "story-08.jpg"
+    },
+    {
+      "n": 9,
+      "kind": "note",
+      "art": "note-09.png"
+    },
+    {
+      "n": 10,
+      "kind": "story",
+      "art": "story-10.jpg"
+    },
+    {
+      "n": 11,
+      "kind": "note",
+      "art": "note-11.png"
+    },
+    {
+      "n": 12,
+      "kind": "story",
+      "art": "story-12.jpg"
+    },
+    {
+      "n": 13,
+      "kind": "note",
+      "art": "note-13.png"
+    },
+    {
+      "n": 14,
+      "kind": "story",
+      "art": "story-14.jpg"
+    },
+    {
+      "n": 15,
+      "kind": "note",
+      "art": "note-15.png"
+    },
+    {
+      "n": 16,
+      "kind": "story",
+      "art": "story-16.jpg"
+    },
+    {
+      "n": 17,
+      "kind": "note",
+      "art": "note-17.png"
+    },
+    {
+      "n": 18,
+      "kind": "story",
+      "art": "story-18.jpg"
+    },
+    {
+      "n": 19,
+      "kind": "note",
+      "art": "note-19.png"
+    },
+    {
+      "n": 20,
+      "kind": "story",
+      "art": "story-20.jpg"
+    },
+    {
+      "n": 21,
+      "kind": "note",
+      "art": "note-21.png"
+    },
+    {
+      "n": 22,
+      "kind": "story",
+      "art": "story-22.jpg"
+    },
+    {
+      "n": 23,
+      "kind": "back"
+    }
+  ]
+}

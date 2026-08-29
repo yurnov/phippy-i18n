@@ -1,0 +1,64 @@
+name: build-pdf
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  # Pinned rather than "latest": the layout is measured to the point, and a
+  # silent Typst upgrade is the kind of thing that reflows a page.
+  TYPST_VERSION: "0.15.1"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Typst
+        run: |
+          url="https://github.com/typst/typst/releases/download/v${TYPST_VERSION}/typst-x86_64-unknown-linux-musl.tar.xz"
+          curl -fsSL "$url" -o typst.tar.xz
+          tar -xf typst.tar.xz
+          sudo install typst-x86_64-unknown-linux-musl/typst /usr/local/bin/typst
+          rm -rf typst.tar.xz typst-x86_64-unknown-linux-musl
+          typst --version
+
+      - name: Build every edition
+        run: tools/build.sh
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: phippy-i18n-pdfs
+          path: build/*.pdf
+          if-no-files-found: error
+          retention-days: 30
+
+  release:
+    # Tag a version to publish the PDFs as a GitHub release.
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: phippy-i18n-pdfs
+          path: build
+
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" build/*.pdf \
+            --title "$GITHUB_REF_NAME" \
+            --notes "Unofficial community translations of the CNCF Phippy books, built from this tag. Original work copyright The Linux Foundation on behalf of the CNCF, licensed CC-BY-4.0; these translations carry the same licence. See NOTICE.md."

@@ -1,0 +1,32 @@
+# Build output
+build/
+
+# Working material that stays out of the public repo.
+# docs/ is the outreach and research trail; sources/ and cncf-files/ hold the
+# originals received from CNCF and its print vendor, which were shared for this
+# work and are not ours to redistribute. The artwork under books/*/art/ is a
+# different thing: it comes from the PDF CNCF publishes under CC-BY-4.0.
+docs/
+sources/
+cncf-files/
+source_and_communucations/
+
+# PDFs are inputs here, never outputs worth committing.
+*.pdf
+
+# Fonts: only the OFL family bundled for the build belongs in the repo.
+# Klinic Slab is a commercial Lost Type release — it must never land here.
+*.otf
+*.ttf
+*.zip
+!fonts/bitter/*.ttf
+
+# Editor and OS noise
+*.swp
+.DS_Store
+*.eml
+*:Zone.Identifier
+*:OECustomProperty
+
+# Python
+__pycache__/
