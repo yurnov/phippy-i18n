@@ -56,12 +56,26 @@ A paragraph. Single newlines inside it reflow, so wrap however you like.
 The paragraph after the bullets is the caption under the illustration.
 ```
 
-Inline, `*text*` is the only markup, and it means italic.
+Inline, `*text*` means italic. `{text}` is the cover's red-pen insertion and means nothing
+anywhere else.
 
-Two page kinds use the blocks differently, and the build checks for it:
+Three page kinds use the blocks differently, and the build checks for it:
 
 - **Note pages** (`p5`, `p7`, … `p21`) need a `###` title and at least one bullet. They become
   the title, the bullet column and the caption.
+- **The cover** (`p1`) takes its title as list items, **one per typeset line** — the lines are
+  not reflowed, because the caret has to land in a known word gap. Exactly one word may be
+  wrapped in `{braces}`: it is lifted out of the line and written in above a red caret, the
+  way the original adds "Illustrated". What remains has to read as a complete title on its
+  own, so put the braces around a word the title can do without, not the first one:
+
+  ```markdown
+  - The {Illustrated} Children's Guide to
+  - Kubernetes
+  ```
+
+  The word is set in Pacifico and shrinks to fit the space to the right of its caret, so a
+  long one is fine, but an insertion point near the end of a line leaves it nowhere to go.
 - **The credits page** (`p2`) renders paragraphs and list items in the order you write them,
   each list item on its own line with no bullet, and a `>` block quote as the fine print at
   the foot of the page. **Put the translation credit here** — this is the page that has to

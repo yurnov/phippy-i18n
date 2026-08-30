@@ -20,6 +20,7 @@ source_and_communications/
 *.ttf
 *.zip
 !fonts/bitter/*.ttf
+!fonts/pacifico/*.ttf
 
 # Editor and OS noise
 *.swp

@@ -30,6 +30,20 @@
 #let FADE-TOP = 421pt // where the artwork starts fading into the page
 #let FADE-BOT = 520pt
 
+// Cover title, measured off the original: an 78pt slab set across a 740pt
+// measure, with "Illustrated" written in above a proofreader's caret in red.
+#let TITLE-TOP = 436pt // cap top of the first line
+#let TITLE-W = 740pt
+#let TITLE-MAX = 78pt
+#let TITLE-ADVANCE = 0.96 // line to line, as a fraction of the size
+#let RED = rgb(251, 7, 8)
+#let SCRIPT-ANGLE = -13deg // the red word rises to the right
+#let SCRIPT-RATIO = 0.90 // Pacifico size, relative to the title size
+#let CARET-RATIO = 1.10 // caret width over its height, from the original
+#let CARET-FILL = 0.78 // how much of the inter-line gap the caret takes up
+#let SCRIPT-MARGIN = 36pt // the red word stops here
+#let SCRIPT-LIFT = 0.10 // clearance above the line it is written over
+
 #let TEAL = rgb(data.layout.palette.title)
 #let BLUE = rgb(data.layout.palette.bullet)
 #let WASH = data.layout.palette.wash.map(rgb)
@@ -119,12 +133,23 @@
 
 // ---------------------------------------------------------------- page kinds
 
+// A proofreader's caret, drawn rather than set: the original is a brush mark,
+// and a typographic "^" reads as punctuation instead of an annotation.
+#let caret-mark(w, h) = {
+  curve(
+    stroke: (paint: RED, thickness: w * 0.30, cap: "round", join: "round"),
+    curve.move((0pt, h)),
+    curve.line((w / 2, 0pt)),
+    curve.line((w, h)),
+  )
+}
+
 #let cover-page(page) = context {
   let im = art(page)
-  let h = measure(im).height
-  place(top + left, dy: h, rect(
+  let art-h = measure(im).height
+  place(top + left, dy: art-h, rect(
     width: PW,
-    height: PH - h,
+    height: PH - art-h,
     fill: gradient.linear(
       rgb(data.layout.cover.seam),
       rgb(data.layout.cover.foot),
@@ -132,17 +157,92 @@
     ),
   ))
   at(0pt, 0pt, im)
-  at(56pt, h + 56pt, block(width: PW - 112pt, {
-    set par(leading: 0.32em, justify: false)
-    set text(hyphenate: false)
-    fit(
-      text(fill: white, weight: 500, data.title),
-      width: PW - 112pt,
-      height: PH - h - 100pt,
-      start: 48pt,
-      min: 26pt,
-    )
-  }))
+
+  // The title is written one list item per typeset line, because the caret has
+  // to land in a known word gap and automatic line breaking would move it.
+  let group = page.blocks.find(b => b.type == "lines")
+  let items = if group == none { () } else { group.items }
+
+  // Lift the {marked} word out of the line it is written on: the printed title
+  // reads without it, which is the whole joke.
+  let split(item) = {
+    let i = item.runs.position(r => r.ins)
+    if i == none {
+      (text: item.runs.map(r => r.text).join(""), word: none)
+    } else {
+      let before = item.runs.slice(0, i).map(r => r.text).join("").trim(at: end)
+      let after = item.runs.slice(i + 1).map(r => r.text).join("")
+      (text: before + after, word: item.runs.at(i).text, before: before, after: after)
+    }
+  }
+  let lines = items.map(split)
+
+  // cap-height as the box edge, so a line's top lands exactly where the
+  // original's ink starts rather than an ascender above it.
+  let styled(size, body) = text(
+    font: "Bitter",
+    size: size,
+    weight: 500,
+    top-edge: "cap-height",
+    bottom-edge: "baseline",
+    hyphenate: false,
+    body,
+  )
+  let width-of(size, body) = measure(styled(size, body)).width
+
+  let size = TITLE-MAX
+  while (
+    size > 24pt
+      and lines.map(l => width-of(size, l.text)).fold(0pt, calc.max) > TITLE-W
+  ) {
+    size -= 0.5pt
+  }
+
+  for (i, l) in lines.enumerate() {
+    let m = measure(styled(size, l.text))
+    let w = m.width
+    let x = (PW - w) / 2
+    let y = TITLE-TOP + i * size * TITLE-ADVANCE
+    at(x, y, text(fill: white, styled(size, l.text)))
+
+    if l.word != none {
+      // Midpoint of the space the word came out of: where `before` ends and
+      // where `after` begins, halved.
+      let gap = x + (width-of(size, l.before) + w - width-of(size, l.after)) / 2
+
+      // The caret is sized to the gap between this line's baseline and the next
+      // line's cap top. The original's is bigger and overlaps the line below,
+      // which only works because "Kubernetes" happens to start clear of it — a
+      // centred translated line lands right on top of it instead.
+      let space = size * TITLE-ADVANCE - m.height
+      let ch = space * CARET-FILL
+      let cw = ch * CARET-RATIO
+      at(gap - cw / 2, y + m.height + space * (1 - CARET-FILL) / 2, caret-mark(cw, ch))
+
+      // The word is written in from the caret rightwards, as in the original.
+      // "Illustrated" leaves room to spare; "ілюстрований" does not, so shrink
+      // it until the rotated word clears the right margin.
+      let word-at(s) = box(text(font: "Pacifico", size: s, fill: RED, l.word))
+      let rotated-width(s) = {
+        let m = measure(word-at(s))
+        (
+          m.width * calc.abs(calc.cos(SCRIPT-ANGLE))
+            + m.height * calc.abs(calc.sin(SCRIPT-ANGLE))
+        )
+      }
+      let word-x = gap - cw / 2
+      let room = PW - SCRIPT-MARGIN - word-x
+      let script = size * SCRIPT-RATIO
+      while script > size * 0.40 and rotated-width(script) > room { script -= 0.5pt }
+
+      let word = word-at(script)
+      at(
+        word-x,
+        y - measure(word).height - size * SCRIPT-LIFT,
+        rotate(SCRIPT-ANGLE, origin: bottom + left, word),
+      )
+    }
+  }
 }
 
 #let credits-page(page) = {

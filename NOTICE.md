@@ -30,7 +30,8 @@ This is an **unofficial community translation**, not published or endorsed by CN
 
 - The text is translated into Ukrainian and Polish.
 - The book is reset from scratch. It is **not** the original design file: the type is set in
-  **Bitter** rather than the original Klinic Slab, and the pages are rebuilt from the
+  **Bitter** rather than the original Klinic Slab, the hand-written word on the cover in
+  **Pacifico** rather than the original brush script, and the pages are rebuilt from the
   measurements in `tools/book.typ` rather than reproduced.
 - The illustrations under `books/*/art/` are extracted from the published CC-BY-4.0 PDF named
   above, by `tools/extract_art.py`. Two sets of them are modified: the technical-note diagrams
@@ -75,17 +76,23 @@ It appears here to attribute the original work to CNCF, on the page whose purpos
 attribution. It is not used as a mark of this translation, and the same page states plainly
 that this is an unofficial community translation which CNCF has not published or endorsed.
 
-## Bundled typeface
+## Bundled typefaces
 
-**Bitter**, Copyright 2011 The Bitter Project Authors
-(<https://github.com/solmatas/BitterPro>), with Reserved Font Name "Bitter Pro". Licensed
-under the **SIL Open Font License, Version 1.1**, reproduced in
-[`fonts/bitter/OFL.txt`](fonts/bitter/OFL.txt).
+Both are licensed under the **SIL Open Font License, Version 1.1**, reproduced alongside each.
+
+- **Bitter**, Copyright 2011 The Bitter Project Authors
+  (<https://github.com/solmatas/BitterPro>), with Reserved Font Name "Bitter Pro" —
+  [`fonts/bitter/OFL.txt`](fonts/bitter/OFL.txt). Used for the body and the titles.
+- **Pacifico**, Copyright 2018 The Pacifico Project Authors
+  (<https://github.com/googlefonts/Pacifico>) —
+  [`fonts/pacifico/OFL.txt`](fonts/pacifico/OFL.txt). Used only for the word written in by
+  hand on the cover.
 
 The OFL does not extend to documents produced with the font, so the generated PDFs remain
 plain CC-BY-4.0 with no licence mixing. Bitter was chosen over the original Klinic Slab
 because it is the nearest open-licensed slab serif covering both Cyrillic and the Polish
 diacritics; Klinic Slab is a commercial Lost Type release and is not redistributed here.
+Pacifico stands in for the brush script of the original cover, and covers both scripts too.
 
 ## Prior art
 

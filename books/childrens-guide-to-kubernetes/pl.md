@@ -17,6 +17,9 @@ znajdują się w [`glossary/pl.md`](../../glossary/pl.md).
 
 ## p1 — okładka
 
+- Przewodnik {ilustrowany} dla dzieci po
+- Kubernetesie
+
 ## p2 — strona redakcyjna
 
 Oto ludzie, którym to zawdzięczamy...

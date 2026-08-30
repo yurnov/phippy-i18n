@@ -45,7 +45,9 @@ books/childrens-guide-to-kubernetes/
 glossary/
     uk.md        Ukrainian term choices, with rationale
     pl.md        Polish term choices, with rationale
-fonts/bitter/    Bitter (SIL OFL 1.1), the typeface the PDFs are set in
+fonts/
+    bitter/      Bitter (SIL OFL 1.1), the text face
+    pacifico/    Pacifico (SIL OFL 1.1), the hand-written word on the cover
 tools/
     extract_art.py  published PDF -> art/            (run rarely, output committed)
     build_book.py   <lang>.md + book.json -> JSON    (stdlib only)
@@ -72,7 +74,10 @@ Two pages needed more than a straight extract, and `tools/extract_art.py` handle
   difference matting and the diagram cut out on its own with a real alpha channel. The
   translated title and bullets are then set live, back in the positions the original used.
 - **The front cover** has its title painted over open water. The artwork is cut above it and
-  the water carried on as a gradient, so the translated title gets a clean surface.
+  the water carried on as a gradient, so the translated title gets a clean surface. The title
+  is then reset, red-pen insertion and all: the marked word is lifted out of the line, written
+  in above it in Pacifico at the original's 13° slant, and a proofreader's caret is drawn in
+  the word gap it came from.
 
 Page geometry, the wash colours, the teal and blue, and where each diagram sits are all
 measured out of the same PDF rather than guessed.
@@ -118,5 +123,6 @@ docker run --rm -v "$PWD:/w" -w /w python:3.12-slim \
 Original work: CC-BY-4.0, The Linux Foundation on behalf of CNCF.
 These translations: CC-BY-4.0, same terms. See [`LICENSE`](LICENSE) and [`NOTICE.md`](NOTICE.md).
 
-The bundled Bitter typeface is under the SIL Open Font License 1.1; its licence travels with
-it in [`fonts/bitter/OFL.txt`](fonts/bitter/OFL.txt).
+The bundled Bitter and Pacifico typefaces are under the SIL Open Font License 1.1; each
+licence travels with its font, in [`fonts/bitter/OFL.txt`](fonts/bitter/OFL.txt) and
+[`fonts/pacifico/OFL.txt`](fonts/pacifico/OFL.txt).

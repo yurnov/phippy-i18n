@@ -20,6 +20,12 @@ misspelling: p9 reads "Philsophia" and p17 reads "Kurbernetes".
 
 ## p1 — cover
 
+The cover title, one list item per typeset line. `{word}` is the red-pen
+insertion written in above a caret — see CONTRIBUTING.md.
+
+- The {Illustrated} Children’s Guide to
+- Kubernetes
+
 ## p2 — credits
 
 Brought to you by...
