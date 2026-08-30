@@ -30,7 +30,10 @@ BOOKS = ROOT / "books"
 BUILD = ROOT / "build"
 
 PAGE_RE = re.compile(r"^##\s+p(\d+)\b")
-EM_RE = re.compile(r"\*([^*]+)\*")
+# `*text*` is italic. `{text}` is the red-pen insertion on a cover title — the
+# word the original has written in above a caret; it is set apart from the line
+# rather than in it, so it needs its own flag rather than an emphasis.
+MARKUP_RE = re.compile(r"\*([^*]+)\*|\{([^}]+)\}")
 
 
 def die(msg: str) -> None:
@@ -64,17 +67,18 @@ def parse_front_matter(text: str) -> tuple[dict, str]:
 
 
 def runs(text: str) -> list[dict]:
-    """Split a line into italic and upright runs."""
+    """Split a line into upright, italic and insertion runs."""
     out: list[dict] = []
     pos = 0
-    for m in EM_RE.finditer(text):
+    for m in MARKUP_RE.finditer(text):
         if m.start() > pos:
-            out.append({"text": text[pos : m.start()], "em": False})
-        out.append({"text": m.group(1), "em": True})
+            out.append({"text": text[pos : m.start()], "em": False, "ins": False})
+        em, ins = m.group(1), m.group(2)
+        out.append({"text": em or ins, "em": em is not None, "ins": ins is not None})
         pos = m.end()
     if pos < len(text):
-        out.append({"text": text[pos:], "em": False})
-    return out or [{"text": "", "em": False}]
+        out.append({"text": text[pos:], "em": False, "ins": False})
+    return out or [{"text": "", "em": False, "ins": False}]
 
 
 def parse_page(lines: list[str]) -> dict:
@@ -191,6 +195,20 @@ def build(slug: str, lang: str) -> pathlib.Path:
                 die(f"{lang}.md p{n} is a note page but has no '### title'")
             if not any(b["type"] == "lines" for b in page["blocks"]):
                 die(f"{lang}.md p{n} is a note page but has no bullets")
+        if kind == "cover":
+            lines = [b for b in page["blocks"] if b["type"] == "lines"]
+            if not lines:
+                die(f"{lang}.md p{n} is the cover but has no title lines")
+            stray = [b["type"] for b in page["blocks"] if b["type"] != "lines"]
+            if stray:
+                die(
+                    f"{lang}.md p{n}: a cover renders its title lines and nothing else, "
+                    f"but this page also has {', '.join(sorted(set(stray)))} — notes to "
+                    f"other translators belong above the first '## p' heading"
+                )
+            marked = [r for b in lines for i in b["items"] for r in i["runs"] if r["ins"]]
+            if len(marked) > 1:
+                die(f"{lang}.md p{n}: only one {{insertion}} is allowed on a cover")
         if kind == "note":
             page["diagram"] = layout["diagrams"][str(n)]
         if spec.get("art"):

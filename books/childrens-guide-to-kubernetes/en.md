@@ -18,7 +18,13 @@ transcribed by eye.
 Two typos in the original are corrected here, because there is no point translating a
 misspelling: p9 reads "Philsophia" and p17 reads "Kurbernetes".
 
+The cover title is one list item per typeset line, with the red-pen insertion in `{braces}`.
+See CONTRIBUTING.md for what the build does with it.
+
 ## p1 — cover
+
+- The {Illustrated} Children’s Guide to
+- Kubernetes
 
 ## p2 — credits
 
