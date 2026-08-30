@@ -199,12 +199,14 @@ def build(slug: str, lang: str) -> pathlib.Path:
             lines = [b for b in page["blocks"] if b["type"] == "lines"]
             if not lines:
                 die(f"{lang}.md p{n} is the cover but has no title lines")
-            marked = [
-                r
-                for item in lines[0]["items"]
-                for r in item["runs"]
-                if r["ins"]
-            ]
+            stray = [b["type"] for b in page["blocks"] if b["type"] != "lines"]
+            if stray:
+                die(
+                    f"{lang}.md p{n}: a cover renders its title lines and nothing else, "
+                    f"but this page also has {', '.join(sorted(set(stray)))} — notes to "
+                    f"other translators belong above the first '## p' heading"
+                )
+            marked = [r for b in lines for i in b["items"] for r in i["runs"] if r["ins"]]
             if len(marked) > 1:
                 die(f"{lang}.md p{n}: only one {{insertion}} is allowed on a cover")
         if kind == "note":

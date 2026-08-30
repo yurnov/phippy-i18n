@@ -18,10 +18,10 @@ transcribed by eye.
 Two typos in the original are corrected here, because there is no point translating a
 misspelling: p9 reads "Philsophia" and p17 reads "Kurbernetes".
 
-## p1 — cover
+The cover title is one list item per typeset line, with the red-pen insertion in `{braces}`.
+See CONTRIBUTING.md for what the build does with it.
 
-The cover title, one list item per typeset line. `{word}` is the red-pen
-insertion written in above a caret — see CONTRIBUTING.md.
+## p1 — cover
 
 - The {Illustrated} Children’s Guide to
 - Kubernetes
