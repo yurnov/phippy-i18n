@@ -1,25 +1,40 @@
 # Polski słownik terminologiczny
 
-Zasady terminologiczne dla polskich tłumaczeń książek Phippy & Friends. Ustalone przez
-sprawdzenie, jak te pojęcia są *faktycznie* używane w polskiej lokalizacji dokumentacji
-Kubernetesa (`kubernetes.io/pl/`, źródło: repo `kubernetes/website`, katalog `content/pl/`) oraz
-w CNCF Cloud Native Glossary. Zasada nadrzędna: **znany angielski termin bije wymyślony polski
-odpowiednik** — nie zgadujemy, sprawdzamy, co już się przyjęło.
+Ten słownik określa, jak zostały przetłumaczone terminy techniczne w polskiej wersji książek
+Phippy & Friends.
 
-**CNCF Cloud Native Glossary (`glossary.cncf.io`) nie ma polskiej lokalizacji** — sprawdzone na
-stronie głównej: dostępne języki to m.in. bengalski, francuski, niemiecki, hindi, włoski,
-japoński, koreański, portugalski, rosyjski, chiński (uproszczony i tradycyjny), hiszpański,
-turecki, urdu i wietnamski. Polski nie jest wśród nich, więc dla polskiego jedynym realnym
-źródłem precedensu jest `kubernetes.io/pl/docs/`.
+Polskie odpowiedniki zostały dobrane przede wszystkim na podstawie terminologii używanej w
+oficjalnej polskiej dokumentacji Kubernetesa (`kubernetes.io/pl/`, źródło: repo
+`kubernetes/website`, katalog `content/pl/`). W miarę możliwości sprawdzono również CNCF Cloud
+Native Glossary, aby upewnić się, że znaczenie poszczególnych terminów zostało właściwie
+zachowane.
 
-Ważna uwaga o samej dokumentacji `kubernetes.io/pl/`: pokrycie jest nierówne. Strony przeglądowe
-(`_index.md`), Pody, Etykiety i Przestrzenie nazw są przetłumaczone i posłużyły za główne źródło
-niżej. Strony `Service` (`services-networking/service/`) i `Volumes` (`storage/volumes/`) **nie
-mają jeszcze polskiego tłumaczenia** (404 na `/pl/`, tylko `_index.md` sekcji istnieje po
-polsku) — dla tych dwóch terminów wnioskuję konwencję z tego, jak są używane *w innych*
-przetłumaczonych stronach (np. strona Namespaces cytuje `Service` i `usługi` wielokrotnie).
-Podobnie nie istnieje dedykowana strona `ReplicaSet` po polsku — wzorzec odmiany wyprowadzony
-przez analogię do `Deployment`, który w tłumaczonych stronach się odmienia.
+Nazwy i terminy powszechnie używane po angielsku w polskim środowisku technicznym nie zostały
+przetłumaczone na siłę. Nadrzędną zasadą było stosowanie terminologii już przyjętej w polskim
+środowisku technicznym. Jeśli powszechnie używany jest termin angielski, pozostawiono go w
+oryginale zamiast tworzyć jego sztuczny polski odpowiednik. W przypadku wątpliwości sprawdzano,
+jakie określenie jest już stosowane w polskiej dokumentacji.
+
+**CNCF Cloud Native Glossary (`glossary.cncf.io`) nie jest dostępny w języku polskim.** Wśród
+dostępnych tłumaczeń znajdują się m.in. wersje bengalska, francuska, niemiecka, hindi, włoska,
+japońska, koreańska, portugalska, rosyjska, chińska (uproszczona i tradycyjna), hiszpańska,
+turecka, urdu oraz wietnamska. Język polski nie jest obecnie dostępny, dlatego słownik CNCF nie
+może posłużyć do sprawdzenia, jakie polskie odpowiedniki tych terminów są już stosowane. W tym
+celu wykorzystana została polska dokumentacja Kubernetesa (`kubernetes.io/pl/docs/`).
+
+Ważna uwaga dotycząca polskiej dokumentacji Kubernetesa (`kubernetes.io/pl/`): nie wszystkie jej
+części zostały przetłumaczone w takim samym zakresie. W języku polskim dostępne są strony główne
+poszczególnych sekcji (`_index.md`) oraz strony dotyczące Podów, Etykiet i Przestrzeni nazw. To
+właśnie te materiały posłużyły jako główne źródło terminologii przedstawionej poniżej. Strony
+poświęcone `Service` (`services-networking/service/`) i `Volumes` (`storage/volumes/`) nie mają
+jeszcze polskiego tłumaczenia. Ich odpowiedniki w polskiej wersji serwisu `/pl/` zwracają błąd
+404. Po polsku dostępne są jedynie strony główne sekcji, do których te materiały należą
+(`_index.md`). Dlatego w przypadku terminów `Service` i `Volume` sposób ich użycia został
+ustalony na podstawie innych stron, które mają polskie tłumaczenie. Na przykład na stronie
+dotyczącej Przestrzeni nazw wielokrotnie pojawia się zarówno nazwa `Service`, jak i polskie
+określenia „usługa” oraz „usługi”. Podobnie nie istnieje osobna polska strona dla `ReplicaSet`.
+Sposób odmiany tej nazwy został przyjęty przez analogię do `Deployment`, którego nazwa jest
+odmieniana na przetłumaczonych stronach dokumentacji.
 
 ## Tabela terminów
 
