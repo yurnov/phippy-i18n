@@ -105,17 +105,21 @@ odmieniana na przetłumaczonych stronach dokumentacji.
 
 ## Do sprawdzenia przez native speakera
 
-- Odmiana **ReplicaSet** (ReplicaSetu / ReplicaSetem / ReplicaSety) jest wyprowadzona przez
-  analogię (brak polskiej strony źródłowej) — warto potwierdzić, że brzmi naturalnie, a nie
-  sztucznie.
-- Wybór **„identyfikator”** dla fabularnego „name tag” to autorska decyzja pomostowa do
-  „etykiety” — warto sprawdzić, czy metafora działa dobrze czytana dziecku na głos.
-- Konsekwentne użycie **„przestrzeń nazw”** zamiast odmienianego „Namespace'a” — dokumentacja PL
-  sama miesza obie formy; dla książki dla dzieci uproszczono do jednej, spolszczonej formy.
-  Warto potwierdzić, że to uproszczenie jest pożądane także z punktu widzenia późniejszej
-  spójności z ewentualnymi kolejnymi książkami z serii.
-- **„wdrożenia kroczące”** dla „rolling deployments” (str. 15) nie ma bezpośredniego oparcia w
-  przetłumaczonej stronie K8s (bo takiej nie ma) — sprawdzić, czy to najlepsze sformułowanie.
-- Ogólne brzmienie stron fabularnych czytane na głos dziecku — zgodnie z `CONTRIBUTING.md`, to
-  najważniejsze kryterium recenzji i wymaga żywego native speakera, nie tylko sprawdzenia
-  terminologii.
+- Formy **ReplicaSet** (ReplicaSetu / ReplicaSetem / ReplicaSety) utworzono zgodnie z zasadami
+  polskiej odmiany podobnych terminów, ponieważ nie ma polskiej wersji dokumentacji, na której
+  można byłoby się oprzeć. Warto sprawdzić, czy brzmią one naturalnie.
+- **Identyfikator** jako odpowiednik "name tag" w części fabularnej został wybrany tak, aby
+  później łatwo było przejść do pojęcia „etykiety”. Warto sprawdzić, czy takie użycie słowa jest
+  zrozumiałe i naturalne, zwłaszcza gdy tekst jest czytany dziecku na głos.
+- Konsekwentnie zastosowano termin **„przestrzeń nazw”** zamiast odmienianego „Namespace'a”.
+  Polska dokumentacja używa obu wariantów, natomiast w książce dla dzieci zdecydowano się na
+  jedną, spolszczoną formę. Warto potwierdzić, czy takie uproszczenie jest pożądane również z
+  punktu widzenia zachowania spójności z ewentualnymi kolejnymi książkami z serii.
+- Określenie **„wdrożenia kroczące”** jako odpowiednik „rolling deployments” (str. 15) nie ma
+  bezpośredniego oparcia w polskiej wersji dokumentacji Kubernetesa, ponieważ takie tłumaczenie
+  nie istnieje. Warto zatem zweryfikować, czy zaproponowane określenie jest najtrafniejszym i
+  najbardziej naturalnym sformułowaniem.
+- Należy również ocenić ogólne brzmienie stron fabularnych podczas czytania ich dziecku na głos.
+  Zgodnie z `CONTRIBUTING.md`, jest to najważniejsze kryterium recenzji i wymaga oceny osoby,
+  dla której język polski jest językiem ojczystym lub posiada naturalną płynność w jego
+  używaniu — sama weryfikacja terminologii nie jest wystarczająca.
