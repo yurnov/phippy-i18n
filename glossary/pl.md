@@ -51,14 +51,14 @@ odmieniana na przetłumaczonych stronach dokumentacji.
 | Service | usługa | Strona `Service` nie jest przetłumaczona, ale inne strony PL używają "usługa"/"usługi" jako głównego słowa w zdaniach, a "Service'ów" (z apostrofem) tylko przy wyliczaniu rodzajów zasobów. Tekst książki i tak pisze "a service" z małej litery, więc "usługa" pasuje bezpośrednio. [Przestrzenie nazw (PL)](https://kubernetes.io/pl/docs/concepts/overview/working-with-objects/namespaces/) |
 | Namespace | przestrzeń nazw | Tytuł strony PL brzmi wprost "Przestrzenie nazw (ang. Namespaces)" i to jest forma dominująca w treści (choć dokumentacja miejscami miesza to z odmienianym "namespace'em" — dla książki dla dzieci konsekwentnie wybieram spolszczoną formę). [Przestrzenie nazw (PL)](https://kubernetes.io/pl/docs/concepts/overview/working-with-objects/namespaces/) |
 | Volume | wolumin | Strona `Volumes` nie jest przetłumaczona, ale strona Podów używa spolszczonego "wolumin" konsekwentnie — "woluminów", "Woluminy pozwalają". [Pody (PL)](https://kubernetes.io/pl/docs/concepts/workloads/pods/) |
-| label / nametag | etykieta (termin techniczny) / identyfikator (metafora w warstwie fabularnej) | "Etykieta" to ustalony termin PL — tytuł strony "Etykiety i selektory". Dla fabularnej metafory "name tag" (fizyczna plakietka/identyfikator wręczana przez kapitana) użyto "identyfikator", żeby zachować obrazowość dla dziecka; notatka techniczna (p11) jawnie łączy oba słowa. [Etykiety (PL)](https://kubernetes.io/pl/docs/concepts/overview/working-with-objects/labels/) |
+| label / nametag | etykieta (termin techniczny) / identyfikator (metafora w warstwie fabularnej) | "Etykieta" to ustalony termin PL — tytuł strony "Etykiety i selektory". Dla fabularnej metafory "name tag" (fizyczna plakietka/identyfikator wręczana przez kapitana) użyto "identyfikator", żeby zachować obrazowość dla dziecka; notatka techniczna (str. 11) jawnie łączy oba słowa. [Etykiety (PL)](https://kubernetes.io/pl/docs/concepts/overview/working-with-objects/labels/) |
 | service discovery | wykrywanie usług | Ustalone ogólnopolskie tłumaczenie w branży IT (nie tylko K8s). [tr-ex.me](https://tr-ex.me/t%C5%82umaczenie/angielski-polski/service+discovery), [howtointerview.pl](https://howtointerview.pl/definicje/co-to-jest-service-discovery/10893/) |
 | replica | replika | Ustalony termin — "Replikowane Pody". [Pody (PL)](https://kubernetes.io/pl/docs/concepts/workloads/pods/) |
 | deployment (słowo ogólne, "rolling deployments") | wdrożenie / wdrożenia kroczące | Standardowe polskie tłumaczenie "rolling deployment/update" w branży IT; brak polskiej strony `Deployment` do zacytowania wprost — decyzja własna oparta na powszechnym uzusie. |
 | load balancing | równoważenie obciążenia | Ustalony, powszechny polski termin informatyczny spoza samej dokumentacji K8s (strona `Service` nie jest przetłumaczona) — używany np. w polskiej literaturze sieciowej i na Wikipedii PL. |
-| scheduling | planowanie (główne, w zdaniach opisowych) / harmonogramowanie (w tytułach sekcji) | Tytuł strony PL: "Harmonogramowanie, pierwszeństwo i eksmisja", ale sama treść definiuje: "planowanie odnosi się do zapewnienia, że Pody są dopasowane do Węzłów". Dla listy pojęć w książce (p7) wybrano "planowanie" jako bardziej czytelne dla ogólnego kontekstu. [Harmonogramowanie (PL)](https://kubernetes.io/pl/docs/concepts/scheduling-eviction/) |
+| scheduling | planowanie (główne, w zdaniach opisowych) / harmonogramowanie (w tytułach sekcji) | Tytuł strony PL: "Harmonogramowanie, pierwszeństwo i eksmisja", ale sama treść definiuje: "planowanie odnosi się do zapewnienia, że Pody są dopasowane do Węzłów". Dla listy pojęć w książce (str. 7) wybrano "planowanie" jako bardziej czytelne dla ogólnego kontekstu. [Harmonogramowanie (PL)](https://kubernetes.io/pl/docs/concepts/scheduling-eviction/) |
 | storage backend | backend pamięci masowej | "Backend" to ugruntowana, nieodmienialna/odmienialna bez adaptacji pożyczka w polskim żargonie IT (np. "backend aplikacji"); "pamięć masowa" to standardowe polskie określenie "storage". Strona `Volumes` nie jest przetłumaczona — decyzja własna oparta na uzusie branżowym. |
-| replication controller (fabularne określenie na p16, nie kapitalizowany rodzaj zasobu) | kontroler replikacji | Dosłownie ten sam zwrot pojawia się w dokumentacji PL: "Usługa i Kontroler Replikacji", "kontroler replikacji (`replicationcontroller`)". [Etykiety (PL)](https://kubernetes.io/pl/docs/concepts/overview/working-with-objects/labels/) |
+| replication controller (fabularne określenie na str. 16, nie kapitalizowany rodzaj zasobu) | kontroler replikacji | Dosłownie ten sam zwrot pojawia się w dokumentacji PL: "Usługa i Kontroler Replikacji", "kontroler replikacji (`replicationcontroller`)". [Etykiety (PL)](https://kubernetes.io/pl/docs/concepts/overview/working-with-objects/labels/) |
 
 ## Imiona postaci i odmiana
 
@@ -80,20 +80,21 @@ odmieniana na przetłumaczonych stronach dokumentacji.
 ## Dobór rejestru i adaptacje żartów/gry słów
 
 - **Kubernetes = greckie słowo na kapitana statku; „Cybernetic”/„Gubernatorial” się z niego
-  wywodzą (p9).** Przetłumaczone wprost — polskie "cybernetyka" i "gubernator" mają dokładnie
-  ten sam grecki rdzeń, więc etymologiczne powiązanie przenosi się bez żadnej adaptacji.
-- **„genetics and sheep” → żart o klonowaniu (p14).** Przetłumaczone dosłownie ("genetyka i
+  wywodzą (str. 9).** Przetłumaczone wprost — polskie "cybernetyka" i "gubernator" mają
+  dokładnie ten sam grecki rdzeń, więc etymologiczne powiązanie przenosi się bez żadnej
+  adaptacji.
+- **„genetics and sheep” → żart o klonowaniu (str. 14).** Przetłumaczone dosłownie ("genetyka i
   owce") — odniesienie do owcy Dolly jest w Polsce równie rozpoznawalne jak w krajach
   anglojęzycznych, więc żart nie wymagał adaptacji.
-- **Powtórzenie słowa „service” (p17): „A service tells... what services your application
+- **Powtórzenie słowa „service” (str. 17): „A service tells... what services your application
   provides”.** W polskim tekście oba znaczenia i tak wychodzą jako "usługa"/"usługi", więc gra
   słów oryginału zachowuje się przy okazji, bez dodatkowego zabiegu.
-- **„name tag” / „labels” (p10–p11).** Angielski oryginał tłumaczy etykiety Kubernetesa metaforą
-  fizycznej plakietki z imieniem. Rozdzielono to świadomie: na stronie fabularnej (p10) — 
-  "identyfikator" (przedmiot, który dziecko rozpozna — plakietka konferencyjna), na stronie
-  technicznej (p11) — formalne "etykieta", z jawnym zdaniem łączącym oba słowa ("Kubernetes
-  wykorzystuje etykiety jako swego rodzaju „identyfikatory”..."), żeby metafora nie zgubiła się
-  między stronami.
+- **„name tag” / „labels” (str. 10–11).** Angielski oryginał tłumaczy etykiety Kubernetesa
+  metaforą fizycznej plakietki z imieniem. Rozdzielono to świadomie: na stronie fabularnej
+  (str. 10) — "identyfikator" (przedmiot, który dziecko rozpozna — plakietka konferencyjna),
+  na stronie technicznej (str. 11) — formalne "etykieta", z jawnym zdaniem łączącym oba słowa
+  ("Kubernetes wykorzystuje etykiety jako swego rodzaju „identyfikatory”..."), żeby metafora
+  nie zgubiła się między stronami.
 - **Phippy / PHP.** Gra słów w imieniu (Phippy ⟷ PHP) nie została "przetłumaczona" — oba
   pozostają w oryginalnej łacińskiej pisowni, więc polski czytelnik ma dokładnie taki sam dostęp
   do tego skojarzenia, jak czytelnik angielski.
@@ -113,7 +114,7 @@ odmieniana na przetłumaczonych stronach dokumentacji.
   sama miesza obie formy; dla książki dla dzieci uproszczono do jednej, spolszczonej formy.
   Warto potwierdzić, że to uproszczenie jest pożądane także z punktu widzenia późniejszej
   spójności z ewentualnymi kolejnymi książkami z serii.
-- **„wdrożenia kroczące”** dla „rolling deployments” (p15) nie ma bezpośredniego oparcia w
+- **„wdrożenia kroczące”** dla „rolling deployments” (str. 15) nie ma bezpośredniego oparcia w
   przetłumaczonej stronie K8s (bo takiej nie ma) — sprawdzić, czy to najlepsze sformułowanie.
 - Ogólne brzmienie stron fabularnych czytane na głos dziecku — zgodnie z `CONTRIBUTING.md`, to
   najważniejsze kryterium recenzji i wymaga żywego native speakera, nie tylko sprawdzenia
