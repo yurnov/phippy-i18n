@@ -43,83 +43,91 @@ odmieniana na przetłumaczonych stronach dokumentacji.
 | container | kontener | Ustalony termin w `kubernetes.io/pl` — "jeden lub więcej kontenerów", "środowisko uruchomieniowe kontenerów". [Pody (PL)](https://kubernetes.io/pl/docs/concepts/workloads/pods/) |
 | cluster | klaster | Standardowy, w pełni spolszczony termin w dokumentacji PL — "Pody w klastrze Kubernetesa". [Przestrzenie nazw (PL)](https://kubernetes.io/pl/docs/concepts/overview/working-with-objects/namespaces/) |
 | node | węzeł (w tekście), `Node` z wielkiej litery przy odwołaniu do rodzaju zasobu | Dokumentacja PL używa "węzeł" w zdaniach opisowych, a "Node" (z linkiem) gdy mowa o samym rodzaju obiektu API. [Pody (PL)](https://kubernetes.io/pl/docs/concepts/workloads/pods/) |
-| app / application | aplikacja | Ustalony, w pełni spolszczony termin — "instancji danej aplikacji". [Pody (PL)](https://kubernetes.io/pl/docs/concepts/workloads/pods/) |
-| hosting provider | dostawca hostingu | Standardowe polskie określenie branżowe; nie jest terminem Kubernetesa, więc bez precedensu w dokumentacji K8s — decyzja własna. |
-| filesystem | system plików | Ustalony termin — "systemu plików", "system plików". [Pody (PL)](https://kubernetes.io/pl/docs/concepts/workloads/pods/) |
-| Pod | **Pod** — zachowane po angielsku, z wielkiej litery, odmieniane jak polski rzeczownik rodzaju męskiego bez apostrofu (Poda, Podzie, Pody, Podów, Podami) | Rodzaj obiektu API zawsze zachowany w oryginale i konsekwentnie odmieniany w całej dokumentacji PL — "W obrębie kontekstu Poda", "Kubernetes zarządza Podami". [Pody (PL)](https://kubernetes.io/pl/docs/concepts/workloads/pods/) |
-| ReplicaSet | **ReplicaSet** — zachowane po angielsku, odmieniane bez apostrofu (ReplicaSetu, ReplicaSetem, ReplicaSety), analogicznie do `Deployment` → `Deploymentów` | Brak dedykowanej strony `ReplicaSet` po polsku; wzorzec odmiany "na sucho" (bez apostrofu, bo słowo kończy się spółgłoską wymawianą) wyprowadzony z `Deploymentów` w [Przestrzeniach nazw (PL)](https://kubernetes.io/pl/docs/concepts/overview/working-with-objects/namespaces/) |
-| Service | usługa | Strona `Service` nie jest przetłumaczona, ale inne strony PL używają "usługa"/"usługi" jako głównego słowa w zdaniach, a "Service'ów" (z apostrofem) tylko przy wyliczaniu rodzajów zasobów. Tekst książki i tak pisze "a service" z małej litery, więc "usługa" pasuje bezpośrednio. [Przestrzenie nazw (PL)](https://kubernetes.io/pl/docs/concepts/overview/working-with-objects/namespaces/) |
-| Namespace | przestrzeń nazw | Tytuł strony PL brzmi wprost "Przestrzenie nazw (ang. Namespaces)" i to jest forma dominująca w treści (choć dokumentacja miejscami miesza to z odmienianym "namespace'em" — dla książki dla dzieci konsekwentnie wybieram spolszczoną formę). [Przestrzenie nazw (PL)](https://kubernetes.io/pl/docs/concepts/overview/working-with-objects/namespaces/) |
-| Volume | wolumin | Strona `Volumes` nie jest przetłumaczona, ale strona Podów używa spolszczonego "wolumin" konsekwentnie — "woluminów", "Woluminy pozwalają". [Pody (PL)](https://kubernetes.io/pl/docs/concepts/workloads/pods/) |
-| label / nametag | etykieta (termin techniczny) / identyfikator (metafora w warstwie fabularnej) | "Etykieta" to ustalony termin PL — tytuł strony "Etykiety i selektory". Dla fabularnej metafory "name tag" (fizyczna plakietka/identyfikator wręczana przez kapitana) użyto "identyfikator", żeby zachować obrazowość dla dziecka; notatka techniczna (str. 11) jawnie łączy oba słowa. [Etykiety (PL)](https://kubernetes.io/pl/docs/concepts/overview/working-with-objects/labels/) |
-| service discovery | wykrywanie usług | Ustalone ogólnopolskie tłumaczenie w branży IT (nie tylko K8s). [tr-ex.me](https://tr-ex.me/t%C5%82umaczenie/angielski-polski/service+discovery), [howtointerview.pl](https://howtointerview.pl/definicje/co-to-jest-service-discovery/10893/) |
-| replica | replika | Ustalony termin — "Replikowane Pody". [Pody (PL)](https://kubernetes.io/pl/docs/concepts/workloads/pods/) |
-| deployment (słowo ogólne, "rolling deployments") | wdrożenie / wdrożenia kroczące | Standardowe polskie tłumaczenie "rolling deployment/update" w branży IT; brak polskiej strony `Deployment` do zacytowania wprost — decyzja własna oparta na powszechnym uzusie. |
-| load balancing | równoważenie obciążenia | Ustalony, powszechny polski termin informatyczny spoza samej dokumentacji K8s (strona `Service` nie jest przetłumaczona) — używany np. w polskiej literaturze sieciowej i na Wikipedii PL. |
-| scheduling | planowanie (główne, w zdaniach opisowych) / harmonogramowanie (w tytułach sekcji) | Tytuł strony PL: "Harmonogramowanie, pierwszeństwo i eksmisja", ale sama treść definiuje: "planowanie odnosi się do zapewnienia, że Pody są dopasowane do Węzłów". Dla listy pojęć w książce (str. 7) wybrano "planowanie" jako bardziej czytelne dla ogólnego kontekstu. [Harmonogramowanie (PL)](https://kubernetes.io/pl/docs/concepts/scheduling-eviction/) |
-| storage backend | backend pamięci masowej | "Backend" to ugruntowana, nieodmienialna/odmienialna bez adaptacji pożyczka w polskim żargonie IT (np. "backend aplikacji"); "pamięć masowa" to standardowe polskie określenie "storage". Strona `Volumes` nie jest przetłumaczona — decyzja własna oparta na uzusie branżowym. |
-| replication controller (fabularne określenie na str. 16, nie kapitalizowany rodzaj zasobu) | kontroler replikacji | Dosłownie ten sam zwrot pojawia się w dokumentacji PL: "Usługa i Kontroler Replikacji", "kontroler replikacji (`replicationcontroller`)". [Etykiety (PL)](https://kubernetes.io/pl/docs/concepts/overview/working-with-objects/labels/) |
+| app / application | aplikacja | Ustalony, w pełni spolszczony termin — "instancja danej aplikacji". [Pody (PL)](https://kubernetes.io/pl/docs/concepts/workloads/pods/) |
+| hosting provider | dostawca hostingu | Standardowe polskie określenie branżowe; nie jest terminem specyficznym dla Kubernetesa i nie występuje w jego dokumentacji, dlatego użycie jest kwestią przyjętej konwencji. |
+| filesystem | system plików | Ustalony termin — "system plików", "systemu plików". [Pody (PL)](https://kubernetes.io/pl/docs/concepts/workloads/pods/) |
+| Pod | **Pod** — termin zachowany w oryginalnej, angielskiej formie, zapisywany wielką literą i odmieniany w polskim tekście bez apostrofu (Poda, Podzie, Pody, Podów, Podami) | Nazwa rodzaju obiektu API pozostaje w oryginale; w polskiej dokumentacji jej formy fleksyjne są stosowane konsekwentnie — "W obrębie kontekstu Poda", "Kubernetes zarządza Podami". [Pody (PL)](https://kubernetes.io/pl/docs/concepts/workloads/pods/) |
+| ReplicaSet | **ReplicaSet** — termin zachowany w oryginalnej, angielskiej formie, zapisywany wielką literą i odmieniany w polskim tekście bez apostrofu (ReplicaSetu, ReplicaSetem, ReplicaSety), analogicznie do `Deployment` → `Deploymentów` | Brak dedykowanej polskiej strony dotyczącej obiektu `ReplicaSet`; sposób odmiany przyjęto analogicznie do innych angielskich nazw zakończonych w wymowie spółgłoską `Deployment` → `Deploymentów` zgodnie z użyciem w [Przestrzeniach nazw (PL)](https://kubernetes.io/pl/docs/concepts/overview/working-with-objects/namespaces/) |
+| Service | usługa | Dedykowana strona dotycząca `Service` nie została przetłumaczona na język polski, jednak na innych polskojęzycznych stronach dokumentacji jako podstawowego odpowiednika tego terminu używa się form "usługa"/"usługi". Forma "Service'ów" (z apostrofem) pojawia się jedynie przy wyliczaniu rodzajów zasobów. W tekście książki termin "service" jest zapisywany małą literą, dlatego "usługa" jest bezpośrednim i najbardziej naturalnym odpowiednikiem. [Usługi i sieci (PL)](https://kubernetes.io/pl/docs/concepts/services-networking/) |
+| Namespace | przestrzeń nazw | Tytuł polskiej wersji strony brzmi wprost "Przestrzenie nazw (ang. Namespaces)" i to jest forma dominująca w treści dokumentacji. Miejscami pojawia się również odmieniana forma "namespace'em", jednak ze względu na charakter książki dla dzieci konsekwentnie stosuje się spolszczony i bardziej przystępny termin "przestrzeń nazw". [Przestrzenie nazw (PL)](https://kubernetes.io/pl/docs/concepts/overview/working-with-objects/namespaces/) |
+| Volume | wolumin | Strona `Volumes` nie została przetłumaczona na język polski, jednak na polskojęzycznej stronie dotyczącej Podów konsekwentnie używana jest spolszczona forma "wolumin", m.in. w wyrażeniach "woluminów", czy "woluminy pozwalają na". Dlatego również w książce stosuje się termin "wolumin". [Pody (PL)](https://kubernetes.io/pl/docs/concepts/workloads/pods/) |
+| label / nametag | etykieta (termin techniczny) / identyfikator (metafora w warstwie fabularnej) | "Etykieta" jest ustalonym polskim terminem technicznym — występuje m.in. w tytule strony "Etykiety i selektory". W opowieści "nametag" oznacza fizyczną plakietkę z nazwą wręczaną przez kapitana, dlatego termin ten jest tłumaczony jako bardziej obrazowy i zrozumiały dla dziecka "identyfikator". Notatka techniczna na str. 11 bezpośrednio łączy określenie "identyfikator" z technicznym terminem "etykieta". [Etykiety (PL)](https://kubernetes.io/pl/docs/concepts/overview/working-with-objects/labels/) |
+| service discovery | wykrywanie usług | Jest to powszechnie przyjęty polski odpowiednik tego terminu w branży IT, stosowany nie tylko w kontekście Kubernetesa. [tr-ex.me](https://tr-ex.me/t%C5%82umaczenie/angielski-polski/service+discovery), [howtointerview.pl](https://howtointerview.pl/definicje/co-to-jest-service-discovery/10893/) |
+| replica | replika | Ustalony termin — "Replika" jest przyjętym polskim odpowiednikiem terminu "replica" w terminologii informatycznej i odnosi się do jednej z wielu równoważnych kopii tego samego zasobu. Takie nazewnictwo jest również zgodne z polską dokumentacją Kubernetes, w której występują powiązane określenia, takie jak "Replikowane Pody" i "replikacja". [Pody (PL)](https://kubernetes.io/pl/docs/concepts/workloads/pods/) |
+| deployment (słowo ogólne, "rolling deployments") | wdrożenie / wdrożenia kroczące | "Wdrożenie" jest powszechnie stosowanym polskim odpowiednikiem terminu "deployment" w branży IT. Analogicznie "rolling deployment" tłumaczone jest jako "wdrożenie kroczące". Ze względu na brak polskiej wersji strony dotyczącej zasobu `Deployment` wybór terminologii opiera się na powszechnym użyciu tych określeń w polskiej terminologii informatycznej. |
+| load balancing | równoważenie obciążenia | Jest to ustalony i powszechnie stosowany polski termin informatyczny, szczególnie w kontekście sieci komputerowych i systemów rozproszonych. Ponieważ strona Kubernetes dotycząca zasobu Service nie została przetłumaczona na j. polski, zastosowano termin funkcjonujący już w polskiej literaturze technicznej i innych polskojęzycznych źródłach informatycznych, np. Wikipedia PL. |
+| scheduling | planowanie (główne, w zdaniach opisowych) / harmonogramowanie (w tytułach sekcji) | W polskiej dokumentacji Kubernetes tytuł odpowiedniej strony brzmi "Harmonogramowanie, pierwszeństwo i eksmisja", natomiast w jej treści termin ten objaśniany jest jako "planowanie", odnoszące się do dopasowywania Podów do Węzłów. W liście pojęć na str. 7 książki zastosowano formę "planowanie", ponieważ jest bardziej przystępna i naturalna w ogólnym, nietechnicznym kontekście. [Harmonogramowanie (PL)](https://kubernetes.io/pl/docs/concepts/scheduling-eviction/) |
+| storage backend | backend pamięci masowej | "Backend" jest ugruntowanym zapożyczeniem powszechnie stosowanym w polskiej terminologii informatycznej, np. w określeniu "backend aplikacji", dlatego pozostawiono go bez tłumaczenia. "Pamięć masowa" jest natomiast standardowym polskim odpowiednikiem terminu "storage". Ponieważ strona Kubernetes dotycząca `Volumes` nie została przetłumaczona na język polski, zastosowana terminologia opiera się na powszechnym użyciu tych określeń w polskiej branży IT. |
+| replication controller | kontroler replikacji | Na str. 16 książki określenie "replication controller" występuje jako nazwa opisowa, a nie jako zapisana wielką literą nazwa rodzaju zasobu, dlatego zastosowano polską formę "kontroler replikacji". Jest to termin stosowany bezpośrednio w polskiej dokumentacji Kubernetes, m.in. w sformułowaniach "Usługa i Kontroler Replikacji" oraz "kontroler replikacji" (`replicationcontroller`). [Etykiety (PL)](https://kubernetes.io/pl/docs/concepts/overview/working-with-objects/labels/) |
 
 ## Imiona postaci i odmiana
 
-- **Phippy** i **Goldie** — pozostawione w oryginalnej łacińskiej pisowni, bez odmiany
-  (nieodmienne w każdym przypadku, tak jak np. "Mary" czy "Kathy" w polskim tekście). Rodzaj
-  żeński jest przenoszony wyłącznie przez odmianę czasowników i przymiotników ("była",
-  "powiedziała", "zrobiła", "przyjaciółkami") — konsekwentnie w całej książce, zgodnie z
-  wymaganiem, że Phippy i Goldie są rodzaju żeńskiego przez cały tekst.
-- **Kapitan Kube** — polskie słowo pospolite "kapitan" odmienia się normalnie (Kapitana,
-  Kapitanowi, Kapitanem...), a "Kube" pozostaje nieodmienne, tak jak polski wzorzec
-  "tytuł/rzeczownik pospolity + obce nazwisko" (por. "Pan Smith", "Pana Smith"). Rodzaj męski
-  konsekwentnie ("powiedział", "zasugerował").
-- **Wieloryb** (bez własnego imienia w oryginale) — "wieloryb" jest w polskim rodzaju męskiego z
-  natury, więc odpowiada zaimkowi "he" z oryginału bez dodatkowej decyzji.
-- Nie znaleziono żadnego istniejącego polskojęzycznego materiału CNCF ani społecznościowego
-  dotyczącego Phippy (sprawdzone wyszukiwaniem) — więc nie było ustalonych wcześniej form imion
-  do naśladowania; powyższe decyzje są autorskie dla tego tłumaczenia.
+- **Phippy** i **Goldie** — imiona pozostawiono w oryginalnej pisowni i bez odmiany przez
+  przypadki, podobnie jak angielskie imiona "Mary" czy "Kathy" w polskim tekście. Rodzaj żeński
+  postaci jest zaznaczany za pomocą odpowiednich form czasowników, przymiotników i innych
+  odmiennych części mowy, np. "była", "powiedziała", "zrobiła" czy "przyjaciółkami". Zasada ta
+  jest stosowana konsekwentnie w całej książce, dzięki czemu Phippy i Goldie są przedstawiane
+  jako postacie rodzaju żeńskiego bez ingerowania w oryginalną formę ich imion.
+- **Kapitan Kube** — polski rzeczownik pospolity "kapitan" odmienia się zgodnie z zasadami
+  języka polskiego ("Kapitana", "Kapitanowi", "Kapitanem"), natomiast "Kube" pozostaje
+  nieodmienne. Konstrukcja ta odpowiada wzorcowi "tytuł lub rzeczownik pospolity + obca nazwa
+  własna", np. "Pan Smith" — "Pana Smith". Rodzaj męski postaci jest konsekwentnie zaznaczany
+  za pomocą odpowiednich form czasowników, np. "powiedział" czy "zasugerował".
+- **Wieloryb** — postać nie ma własnego imienia w oryginale. Określenie "wieloryb" ma w języku
+  polskim rodzaj męski, dlatego naturalnie odpowiada używanemu w oryginale zaimkowi "he" i nie
+  wymaga dodatkowej decyzji dotyczącej rodzaju postaci.
+- Nie znaleziono istniejących polskojęzycznych materiałów CNCF ani materiałów społecznościowych
+  dotyczących Phippy (na podstawie przeprowadzonego wyszukiwania). Nie ma zatem ustalonych
+  wcześniej polskich form imion, do których można byłoby się odwołać. Powyższe rozwiązania
+  zostały przyjęte na potrzeby tego tłumaczenia.
 
 ## Dobór rejestru i adaptacje żartów/gry słów
 
-- **Kubernetes = greckie słowo na kapitana statku; „Cybernetic”/„Gubernatorial” się z niego
-  wywodzą (str. 9).** Przetłumaczone wprost — polskie "cybernetyka" i "gubernator" mają
-  dokładnie ten sam grecki rdzeń, więc etymologiczne powiązanie przenosi się bez żadnej
-  adaptacji.
-- **„genetics and sheep” → żart o klonowaniu (str. 14).** Przetłumaczone dosłownie ("genetyka i
+- **Kubernetes = greckie słowo oznaczające kapitana statku; "Cybernetic"/"Gubernatorial" się
+  z niego wywodzą (str. 9).** Przetłumaczone bezpośrednio — polskie słowa "cybernetyka" i
+  "gubernator" wywodzą się z tego samego greckiego rdzenia, dlatego etymologiczne powiązanie
+  zostaje zachowane bez potrzeby dodatkowej adaptacji.
+- **"genetics and sheep" → żart o klonowaniu (str. 14).** Przetłumaczone dosłownie ("genetyka i
   owce") — odniesienie do owcy Dolly jest w Polsce równie rozpoznawalne jak w krajach
-  anglojęzycznych, więc żart nie wymagał adaptacji.
-- **Powtórzenie słowa „service” (str. 17): „A service tells... what services your application
-  provides”.** W polskim tekście oba znaczenia i tak wychodzą jako "usługa"/"usługi", więc gra
-  słów oryginału zachowuje się przy okazji, bez dodatkowego zabiegu.
-- **„name tag” / „labels” (str. 10–11).** Angielski oryginał tłumaczy etykiety Kubernetesa
-  metaforą fizycznej plakietki z imieniem. Rozdzielono to świadomie: na stronie fabularnej
-  (str. 10) — "identyfikator" (przedmiot, który dziecko rozpozna — plakietka konferencyjna),
-  na stronie technicznej (str. 11) — formalne "etykieta", z jawnym zdaniem łączącym oba słowa
-  ("Kubernetes wykorzystuje etykiety jako swego rodzaju „identyfikatory”..."), żeby metafora
-  nie zgubiła się między stronami.
-- **Phippy / PHP.** Gra słów w imieniu (Phippy ⟷ PHP) nie została "przetłumaczona" — oba
-  pozostają w oryginalnej łacińskiej pisowni, więc polski czytelnik ma dokładnie taki sam dostęp
-  do tego skojarzenia, jak czytelnik angielski.
-- **Rejestr.** Strony fabularne pisane klasyczną polską dykcją baśniową ("Dawno, dawno temu żyła
-  sobie...", zakończenie "I tak Phippy żyła długo i szczęśliwie") — mają dobrze brzmieć czytane
-  dziecku na głos. Strony z notatką techniczną unikają narracyjnych ozdobników i trzymają się
-  rejestru zbliżonego do dokumentacji.
+  anglojęzycznych, dlatego żart nie wymaga dodatkowej adaptacji.
+- **Powtórzenie słowa "service" (str. 17): "A service tells... what services your application
+  provides".** W polskim tłumaczeniu oba użycia tego słowa odpowiadają formom
+  "usługa"/"usługi", dzięki czemu gra słów z oryginału zostaje zachowana bez potrzeby
+  dodatkowej adaptacji.
+- **"name tag" / "labels" (str. 10–11).** Angielski oryginał objaśnia etykiety Kubernetesa za
+  pomocą metafory fizycznej plakietki z imieniem. Terminy zostały świadomie rozdzielone:
+  w części fabularnej (str. 10) zastosowano "identyfikator" — określenie konkretnego i łatwo
+  rozpoznawalnego przedmiotu, takiego jak plakietka konferencyjna — natomiast w części
+  technicznej (str. 11) użyto formalnego terminu "etykieta". Oba pojęcia łączy bezpośrednio
+  zdanie "Kubernetes wykorzystuje etykiety jako swego rodzaju "identyfikatory"...", dzięki
+  czemu związek między metaforą a terminem technicznym zostaje zachowany.
+- **Phippy / PHP.** Gra słów zawarta w imieniu Phippy (Phippy ⟷ PHP) nie wymaga adaptacji —
+  zarówno "Phippy", jak i "PHP" pozostają w oryginalnej pisowni, dzięki czemu skojarzenie
+  między nimi zostaje zachowane również w polskim tłumaczeniu.
+- **Rejestr.** W części fabularnej zastosowano klasyczną polską stylistykę baśniową ("Dawno,
+  dawno temu żyła sobie...", zakończenie "I tak Phippy żyła długo i szczęśliwie"), tak aby
+  tekst brzmiał naturalnie podczas czytania dziecku na głos. Notatki techniczne pozbawiono
+  narracyjnych ozdobników i utrzymano w rejestrze zbliżonym do polskiej dokumentacji
+  technicznej.
 
 ## Do sprawdzenia przez native speakera
 
 - Formy **ReplicaSet** (ReplicaSetu / ReplicaSetem / ReplicaSety) utworzono zgodnie z zasadami
   polskiej odmiany podobnych terminów, ponieważ nie ma polskiej wersji dokumentacji, na której
-  można byłoby się oprzeć. Warto sprawdzić, czy brzmią one naturalnie.
+  można byłoby się oprzeć. Warto zweryfikować, czy formy te brzmią naturalnie w polskim tekście.
 - **Identyfikator** jako odpowiednik "name tag" w części fabularnej został wybrany tak, aby
-  później łatwo było przejść do pojęcia „etykiety”. Warto sprawdzić, czy takie użycie słowa jest
-  zrozumiałe i naturalne, zwłaszcza gdy tekst jest czytany dziecku na głos.
-- Konsekwentnie zastosowano termin **„przestrzeń nazw”** zamiast odmienianego „Namespace'a”.
-  Polska dokumentacja używa obu wariantów, natomiast w książce dla dzieci zdecydowano się na
-  jedną, spolszczoną formę. Warto potwierdzić, czy takie uproszczenie jest pożądane również z
-  punktu widzenia zachowania spójności z ewentualnymi kolejnymi książkami z serii.
-- Określenie **„wdrożenia kroczące”** jako odpowiednik „rolling deployments” (str. 15) nie ma
-  bezpośredniego oparcia w polskiej wersji dokumentacji Kubernetesa, ponieważ takie tłumaczenie
-  nie istnieje. Warto zatem zweryfikować, czy zaproponowane określenie jest najtrafniejszym i
-  najbardziej naturalnym sformułowaniem.
-- Należy również ocenić ogólne brzmienie stron fabularnych podczas czytania ich dziecku na głos.
-  Zgodnie z `CONTRIBUTING.md`, jest to najważniejsze kryterium recenzji i wymaga oceny osoby,
-  dla której język polski jest językiem ojczystym lub posiada naturalną płynność w jego
-  używaniu — sama weryfikacja terminologii nie jest wystarczająca.
+  umożliwić późniejsze naturalne przejście do technicznego pojęcia "etykiety". Warto sprawdzić,
+  czy takie użycie słowa jest zrozumiałe i naturalne, zwłaszcza podczas czytania tekstu dziecku
+  na głos.
+- Konsekwentnie zastosowano termin **"przestrzeń nazw"** zamiast odmienianej formy
+  "Namespace'a". Polska dokumentacja używa obu wariantów, natomiast w książce dla dzieci
+  przyjęto jedną, spolszczoną formę. Warto potwierdzić, czy takie rozwiązanie jest odpowiednie
+  również z punktu widzenia zachowania spójności z ewentualnymi kolejnymi książkami z serii.
+- Określenie **"wdrożenia kroczące"** jako odpowiednik "rolling deployments" (str. 15) nie ma
+  bezpośredniego oparcia w polskiej wersji dokumentacji Kubernetesa, ponieważ odpowiednia strona
+  nie została przetłumaczona. Warto zatem zweryfikować, czy zaproponowany termin jest trafny
+  i naturalny w tym kontekście.
+- Należy również ocenić ogólne brzmienie części fabularnej podczas czytania jej dziecku na głos.
+  Zgodnie z `CONTRIBUTING.md` jest to najważniejsze kryterium recenzji i wymaga oceny osoby,
+  dla której język polski jest językiem ojczystym lub która posługuje się nim z naturalną
+  płynnością. Sama weryfikacja poprawności terminologii technicznej nie jest wystarczająca.
