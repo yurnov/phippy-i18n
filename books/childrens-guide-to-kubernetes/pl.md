@@ -11,7 +11,7 @@ reviewers:
 Tłumaczenie polskie. Przetłumaczone z pliku `en.md` w tym samym katalogu — angielskiego
 tekstu z opublikowanego PDF-a CNCF, a nie z innego tłumaczenia.
 
-Numeracja stron i naprzemienny układ „opowieść / notatka techniczna" wynikają z ilustracji
+Numeracja stron i naprzemienny układ „opowieść / notatka techniczna” wynikają z ilustracji
 i muszą odpowiadać `en.md` strona w stronę. Decyzje terminologiczne wraz z uzasadnieniem
 znajdują się w [`glossary/pl.md`](../../glossary/pl.md).
 
@@ -73,23 +73,23 @@ Kontener zapewnia odizolowany kontekst, w którym aplikacja może działać raze
 
 ## p8 — opowieść: Kapitan Kube
 
-Wieloryb wzruszył ramionami. „Przykro mi, mała" — powiedział i zniknął pod powierzchnią oceanu. Ale zanim Phippy zdążyła się choćby zasmucić, na horyzoncie pojawił się kapitan, sterujący ogromnym statkiem. Statek zbudowany był z dziesiątek tratw powiązanych ze sobą, ale z zewnątrz wyglądał jak jeden wielki okręt.
+Wieloryb wzruszył ramionami. „Przykro mi, mała” — powiedział i zniknął pod powierzchnią oceanu. Ale zanim Phippy zdążyła się choćby zasmucić, na horyzoncie pojawił się kapitan, sterujący ogromnym statkiem. Statek zbudowany był z dziesiątek tratw powiązanych ze sobą, ale z zewnątrz wyglądał jak jeden wielki okręt.
 
-„Witaj, mała aplikacjo! Nazywam się Kapitan Kube" — powiedział mądry, stary kapitan.
+„Witaj, mała aplikacjo! Nazywam się Kapitan Kube” — powiedział mądry, stary kapitan.
 
 ## p9 — notatka: Kubernetes
 
 ### Kubernetes
 
-- Phi-Beta-Kappa: Philosophia Biou Kubernetes („umiłowanie mądrości sterem życia")
+- Phi-Beta-Kappa: Philosophia Biou Kubernetes („umiłowanie mądrości sterem życia”)
 
-„Kubernetes" to greckie słowo oznaczające kapitana statku. Od słowa „kubernetes" pochodzą między innymi wyrazy *cybernetyka* i *gubernator*. Projekt Kubernetes skupia się na budowie solidnej platformy do uruchamiania tysięcy kontenerów w środowisku produkcyjnym.
+„Kubernetes” to greckie słowo oznaczające kapitana statku. Od słowa „kubernetes” pochodzą między innymi wyrazy *cybernetyka* i *gubernator*. Projekt Kubernetes skupia się na budowie solidnej platformy do uruchamiania tysięcy kontenerów w środowisku produkcyjnym.
 
 ## p10 — opowieść: identyfikator
 
-„Jestem Phippy" — powiedziała mała aplikacja.
+„Jestem Phippy” — powiedziała mała aplikacja.
 
-„Miło mi cię poznać" — powiedział kapitan, wręczając jej identyfikator.
+„Miło mi cię poznać” — powiedział kapitan, wręczając jej identyfikator.
 
 ## p11 — notatka: etykiety
 
@@ -97,7 +97,7 @@ Wieloryb wzruszył ramionami. „Przykro mi, mała" — powiedział i zniknął 
 
 - Po tych etykietach można wyszukiwać
 
-Kubernetes wykorzystuje etykiety jako swego rodzaju „identyfikatory", dzięki którym można rozpoznawać poszczególne obiekty. Etykiety są otwarte — możesz ich używać do oznaczania roli, stabilności czy innych ważnych cech.
+Kubernetes wykorzystuje etykiety jako swego rodzaju „identyfikatory”, dzięki którym można rozpoznawać poszczególne obiekty. Etykiety są otwarte — możesz ich używać do oznaczania roli, stabilności czy innych ważnych cech.
 
 ## p12 — opowieść: Pod
 
@@ -115,9 +115,9 @@ Pod reprezentuje uruchamialną jednostkę pracy. Zazwyczaj wewnątrz Poda dział
 
 ## p14 — opowieść: klonowanie
 
-Phippy miała nietypowe zainteresowania — bardzo lubiła genetykę i owce. Zapytała więc kapitana: „A co, jeśli zechcę sklonować samą siebie… na żądanie… dowolną liczbę razy?"
+Phippy miała nietypowe zainteresowania — bardzo lubiła genetykę i owce. Zapytała więc kapitana: „A co, jeśli zechcę sklonować samą siebie… na żądanie… dowolną liczbę razy?”
 
-„To żaden problem" — powiedział kapitan i przedstawił jej ReplicaSety.
+„To żaden problem” — powiedział kapitan i przedstawił jej ReplicaSety.
 
 ## p15 — notatka: ReplicaSety
 
@@ -133,9 +133,9 @@ ReplicaSety zapewniają sposób zarządzania dowolną liczbą Podów. ReplicaSet
 
 Przez wiele dni i nocy mała aplikacja cieszyła się swoim Podem i swoimi replikami. Ale mieć za całe towarzystwo tylko samą siebie — nawet jeśli jest się w N kopiach — to jednak nie to samo, co prawdziwe towarzystwo.
 
-Kapitan Kube uśmiechnął się łagodnie. „Mam właśnie coś takiego."
+Kapitan Kube uśmiechnął się łagodnie. „Mam właśnie coś takiego.”
 
-Nie zdążył nawet skończyć zdania, gdy między kontrolerem replikacji Phippy a resztą statku otworzył się tunel. Kapitan Kube roześmiał się serdecznie: „Nawet gdy twoje klony będą przychodzić i odchodzić, ten tunel tu zostanie, żebyś mogła odkrywać inne Pody, a one mogły odkrywać ciebie!"
+Nie zdążył nawet skończyć zdania, gdy między kontrolerem replikacji Phippy a resztą statku otworzył się tunel. Kapitan Kube roześmiał się serdecznie: „Nawet gdy twoje klony będą przychodzić i odchodzić, ten tunel tu zostanie, żebyś mogła odkrywać inne Pody, a one mogły odkrywać ciebie!”
 
 ## p17 — notatka: usługi
 
@@ -153,11 +153,11 @@ Usługa informuje resztę środowiska Kubernetes (w tym inne Pody i ReplicaSety)
 
 Phippy zaczęła zwiedzać resztę statku. Nie minęło wiele czasu, a poznała Goldie i szybko zostały najlepszymi przyjaciółkami. Pewnego dnia Goldie zrobiła coś niezwykłego — dała Phippy prezent. Phippy spojrzała na niego tylko raz, a z jej oka popłynęła najsmutniejsza z łez.
 
-„Dlaczego jesteś taka smutna?" — zapytała Goldie.
+„Dlaczego jesteś taka smutna?” — zapytała Goldie.
 
-„Uwielbiam ten prezent, ale nie mam gdzie go schować" — pociągnęła nosem Phippy.
+„Uwielbiam ten prezent, ale nie mam gdzie go schować” — pociągnęła nosem Phippy.
 
-Ale Goldie wiedziała, co robić: „A może schowasz go w woluminie?"
+Ale Goldie wiedziała, co robić: „A może schowasz go w woluminie?”
 
 ## p19 — notatka: woluminy
 
@@ -175,7 +175,7 @@ Wolumin reprezentuje miejsce, do którego kontenery mogą uzyskiwać dostęp i w
 
 Phippy uwielbiała życie na pokładzie statku Kapitana Kube i cieszyła się towarzystwem swoich nowych przyjaciół (każdy replikowany Pod Goldie był tak samo uroczy). Ale gdy wspominała swoje dni u strasznego dostawcy hostingu, zaczęła się zastanawiać, czy może przydałoby jej się też trochę prywatności.
 
-„Brzmi na to, że potrzebujesz" — powiedział Kapitan Kube — „przestrzeni nazw."
+„Brzmi na to, że potrzebujesz” — powiedział Kapitan Kube — „przestrzeni nazw.”
 
 ## p21 — notatka: przestrzenie nazw
 
