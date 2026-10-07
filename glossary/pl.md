@@ -110,24 +110,35 @@ odmieniana na przetłumaczonych stronach dokumentacji.
   narracyjnych ozdobników i utrzymano w rejestrze zbliżonym do polskiej dokumentacji
   technicznej.
 
-## Do sprawdzenia przez native speakera
+## Stan recenzji i kwestie otwarte
+
+Terminologia oraz treść tego słownika zostały zrecenzowane przez osobę, dla której język polski
+jest językiem ojczystym (październik 2026). Recenzja doprecyzowała uzasadnienia i źródła
+poszczególnych decyzji, nie zmieniła natomiast żadnej z nich.
+
+Otwarta pozostaje ocena samego tekstu książki
+([`books/childrens-guide-to-kubernetes/pl.md`](../books/childrens-guide-to-kubernetes/pl.md)).
+Zgodnie z `CONTRIBUTING.md` najważniejszym kryterium recenzji jest ogólne brzmienie części
+fabularnej podczas czytania jej dziecku na głos i wymaga ono oceny osoby, dla której język
+polski jest językiem ojczystym lub która posługuje się nim z naturalną płynnością. Sama
+weryfikacja poprawności terminologii technicznej nie jest wystarczająca.
+
+Przy takiej lekturze warto zweryfikować w szczególności:
 
 - Formy **ReplicaSet** (ReplicaSetu / ReplicaSetem / ReplicaSety) utworzono zgodnie z zasadami
   polskiej odmiany podobnych terminów, ponieważ nie ma polskiej wersji dokumentacji, na której
-  można byłoby się oprzeć. Warto zweryfikować, czy formy te brzmią naturalnie w polskim tekście.
+  można byłoby się oprzeć. Warto sprawdzić, czy brzmią naturalnie w zdaniach książki, a nie
+  tylko w tabeli powyżej.
 - **Identyfikator** jako odpowiednik „name tag” w części fabularnej został wybrany tak, aby
   umożliwić późniejsze naturalne przejście do technicznego pojęcia „etykiety”. Warto sprawdzić,
   czy takie użycie słowa jest zrozumiałe i naturalne, zwłaszcza podczas czytania tekstu dziecku
   na głos.
-- Konsekwentnie zastosowano termin **„przestrzeń nazw”** zamiast odmienianej formy
-  „Namespace'a”. Polska dokumentacja używa obu wariantów, natomiast w książce dla dzieci
-  przyjęto jedną, spolszczoną formę. Warto potwierdzić, czy takie rozwiązanie jest odpowiednie
-  również z punktu widzenia zachowania spójności z ewentualnymi kolejnymi książkami z serii.
 - Określenie **„wdrożenia kroczące”** jako odpowiednik „rolling deployments” (str. 15) nie ma
   bezpośredniego oparcia w polskiej wersji dokumentacji Kubernetesa, ponieważ odpowiednia strona
   nie została przetłumaczona. Warto zatem zweryfikować, czy zaproponowany termin jest trafny
   i naturalny w tym kontekście.
-- Należy również ocenić ogólne brzmienie części fabularnej podczas czytania jej dziecku na głos.
-  Zgodnie z `CONTRIBUTING.md` jest to najważniejsze kryterium recenzji i wymaga oceny osoby,
-  dla której język polski jest językiem ojczystym lub która posługuje się nim z naturalną
-  płynnością. Sama weryfikacja poprawności terminologii technicznej nie jest wystarczająca.
+
+Osobną kwestią — nie językową, lecz projektową — jest konsekwentne stosowanie terminu
+**„przestrzeń nazw”** zamiast odmienianej formy „Namespace'a”. Polska dokumentacja używa obu
+wariantów, natomiast w książce dla dzieci przyjęto jedną, spolszczoną formę. Wymaga to
+potwierdzenia pod kątem spójności z ewentualnymi kolejnymi książkami z serii.
